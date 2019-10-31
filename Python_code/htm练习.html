@@ -1,0 +1,122 @@
+<html>
+	<h1>此处为标题</h1>
+	<h2><b>此处为标题</b></h2>
+	<h3>此处为标题</h3>
+	<h4>此处为标题</h4>
+	<body>
+	<p>第一段 世界大势，合久必分，分久必合</p>
+	<hr/><!--表示单行横线显式-->
+	<p><b>此处为第二端内容</b></p>
+	<p>此处为第三段</p>
+	<!--此处为链接--><a href="http://www.baidu.com"target="_self">点击进入百度</a>
+	<p><i><b><img src="http://mysite.com/mypic.png"alt="作者的照片"/></b></i></p>
+	<!--此处为表格练习-->
+	<h3>普通无边框表格：</h3>
+	<table>
+	<tr>
+		<td>row 1 cell 1</td><td>row 1 cell 2</td><td>row 1 cell 3</td>
+	</tr>
+	<tr>
+		<td>row 2 cell 1</td><td>row 2 cell 2</td><td>row 3 cell 3</td>
+	</tr>
+	<table>
+	<h3>带表头、有边框、有跨列单元</h3>
+	<table border="2">
+	<tr>
+		<th> head 1 </th><th> head 2 </th><th> head 3 </th>
+	</tr>
+	<tr>
+		<td rowspan="2">row 1 cell 1</td><td>row 1 cell 2</td><td>row 1 cell 3</td>
+	</tr>
+	<tr>
+		<td colspan="2"> row 2 cell 2</td>
+	</tr>
+	<!--此处为列表练习-->
+	<h3>三种列表的示例如下</h3>
+	<table cellpadding="2" cellspacing="2">
+	<tr>
+		<td>
+			<ul><li>Python</li><li>C++</li><li>Java</li><li>Golang</li></ul>
+		</td>
+		<td>
+			<ol><li>大象</li><li>狮子</li><li>花豹</li><li>狐狸</li></ol>
+		</td>
+		<td>
+		</td>
+	</tr>
+	</table>
+	<dl>
+		<dt>CPU</dt><dd>cpu是计算机。。。。。</dd>
+		<dt>内存</dt><dd>内存是计算机。。。。。</dd>
+	</dl>
+	<!--此处为颜色背景练习-->
+	<body bgcolor="green"> hello </body>
+	<!--此处为flash及音视频-->
+	<audio controls="controls">
+		<source src="C:\Users\Administrator\Desktop\宇西 - 安和桥（Cover 宋冬野）.mp3" type="audio/mp3"/>
+	</audio>
+	<video controls="controls">
+		<source src="C:\Users\Administrator\Desktop\Movie201910260101.mp4" type="video/mp4"/>
+	</video>
+	<!--此处为表单练习-->
+	<!--边框提交控制语句-->
+	<form name="input" action="url_form_action">
+	<fieldset>
+	<!---->
+	<table>
+	<tr>
+	<td>用户名:</td>
+	<td><input type="text" name="name"></td>
+	<td>密码:</td>
+	<td><input type="text" name="passwd"></td>
+	</tr>
+	<tr>
+	<td colspan="2">备注:</td>
+	</tr>
+	<tr>
+		<td colspan="4"><textarea name="comment" rows="5" cols="60"></textarea></td>
+	</tr>
+	<!-----------------单项按钮--------------->
+	<tr>
+		<td>性别：</td>
+		<td>用户名：</td>
+		<td>男性<input type="radio" checked="checked" name="Sex" value="male"/></td>
+		<td>女性<input type="radio" name="Sex" value="female" /></td>
+	</tr>
+	<!-----------------下拉按钮--------------->
+	<tr>
+		<td> 学历：</td>
+		<td colspan="2">
+		<select name="grade">
+		<option value="middle_school">高中及一下</option>
+		<option value="high_school">专科</option>
+		<option value="bachlor" selected="select">本科</option>
+		<option value="master">研究生及以上</option>
+		</select>
+		</td>
+	</tr>
+	</table>
+	<!--多项选择-->
+	<tr>
+		<td rowspan="2"> 兴趣爱好</td>
+		<td>运动:<input type="checkbox" name="sport"/></td>
+		<td>电影:<input type="checkbox" name="movie"/></td>
+		<td>音乐:<input type="checkbox" name="music"/></td>
+	</tr>
+	<table>
+	<tr>
+		<td rowspan="2">电影</td>
+		<td>
+		<select name="movie">
+		<option value="lll">啦啦啦</option>
+		<option value="kkk">敢死队</option>
+		</select>
+		</td>
+	</tr>
+	</table>
+	<!--边框提交-->
+	</fieldset>
+	</form>
+	<!---->
+	</body>
+</html>
