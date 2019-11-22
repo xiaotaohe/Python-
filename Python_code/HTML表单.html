@@ -1,0 +1,53 @@
+<HTML>
+	<body>
+		<!-- 边框提交 --->
+		<form name="input" action="url_form_action">
+		<fieldset>
+		<legend>用户注册</legend>
+			<table>
+				<tr>
+					<td> 用户：</td>
+					<td><input type="text" name = "name"></td>
+				</tr>
+				<tr>
+					<td> 密码：</td>
+					<td><input type="passwd" name = "pass"></td>
+				</tr>
+				<tr>
+					<td colspan = "2">备注：</td>
+				</tr>
+				<tr>
+					<td colspan = "4"><textarea name="comment" rows="5" cols="60"></textarea></td>
+				</tr>
+			<!-- 单选按钮 --->
+			<td>男性<input type="radio"  name="Sex" value="male" /></td>
+			<td>女性<input type="radio" checked="checked" name="Sex" value="female" /></td>
+			<!-- 下拉列表 --->
+			<tr>
+				<td colspan = "100">
+				<select name="grad">
+				<option value="middle_school"> 高中</option>
+				<option value="university">大学</option>
+				</select>
+				</td>
+			</tr>
+			<!-- 多项选择 --->
+			<tr>
+				<td rowspan="2">兴趣爱好:</td>
+				<td> 运动：<input type="checkbox" name="Sport"></td>
+				<td> 电影：<input type="checkbox" name="Move"</td>
+				<td> 音乐：<input type="checkbox" name="Music"</td>
+			</tr>
+			<tr>
+				<td> 编程：<input type="checkbox" name="Sport"></td>
+				<td> 下厨：<input type="checkbox" name="Move"</td>
+				<td> 旅游：<input type="checkbox" name="Music"</td>
+			</tr>
+			</table>
+			<!--- 文件上传 --->
+			<td>图片上传:<input type="file" name="pic" accept=".png,.jpg,.gif"></td>
+		<submit value="注册">
+		</fieldset>
+		</form>
+	</body>
+</HTML>
