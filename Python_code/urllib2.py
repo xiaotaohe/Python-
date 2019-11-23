@@ -16,6 +16,7 @@ def clear():
 def linkBaidu():
     url = 'http://www.baidu.com'
     try:
+        #打开url网址
         response = urllib.request.urlopen(url,timeout=3)
     except urllib.request.URLError:
         print(u"网络地址错误")
