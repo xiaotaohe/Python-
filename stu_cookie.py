@@ -58,33 +58,44 @@ from urllib import request
 from http.cookiejar import CookieJar
 from urllib import parse
 
-#1. 登录
-#1.1 创建一个cookiejar对象
-cookiejar = CookieJar()
-#1.2 使用cookiejar创建一个HTTPCookieProcessor对象
-handler = request.HTTPCookieProcessor(cookiejar)
-#1.3 使用上一步创建的handler创建一个opener
-opener = request.build_opener(handler)
-#1.4 使用opener发送登录请求（人人网的邮箱和密码)
 headers = {'User-Agent':
                'Mozilla/5.0 (Windows NT 10.0; WOW64) '
                'AppleWebKit/537.36 (KHTML, like Gecko) '
                'Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3730.400 '
                'QQBrowser/10.5.3805.400'}
-data = {'email':"13022988230",
-        'password':'taochao19970123'}
-Login_url = 'http://www.renren.com/PLogin.do'
-req = request.Request(Login_url,data=parse.urlencode(\
-    data).encode('utf-8'),headers=headers)
-opener.open(req)
 
-#2.访问个人主页
-dapeng_url = "http://www.renren.com/880151247/profile"
-# 获取个人主页的页面的时候，不要新建一个opener
-# 而应该使用之前的那个opener，因为之前的那个opener已经包含了
-# 登陆所需要的cookie信息
-req = request.Request(dapeng_url,headers=headers)
-resp = opener.open(dapeng_url)
-with open('renren.html','w',encoding='utf-8') as fp:
-    fp.write(resp.read().decode('utf-8'))
+def get_opener():
+    #1. 登录
+    #1.1 创建一个cookiejar对象
+    cookiejar = CookieJar()
+    #1.2 使用cookiejar创建一个HTTPCookieProcessor对象
+    handler = request.HTTPCookieProcessor(cookiejar)
+    #1.3 使用上一步创建的handler创建一个opener
+    opener = request.build_opener(handler)
+    return opener;
+
+def Login_renren(opener):
+    #1.4 使用opener发送登录请求（人人网的邮箱和密码)
+    data = {'email':"13022988230",
+            'password':'taochao19970123'}
+    Login_url = 'http://www.renren.com/PLogin.do'
+    req = request.Request(Login_url,data=parse.urlencode(\
+        data).encode('utf-8'),headers=headers)
+    opener.open(req)
+
+def visit_profile(opener):
+    #2.访问个人主页
+    dapeng_url = "http://www.renren.com/880151247/profile"
+    # 获取个人主页的页面的时候，不要新建一个opener
+    # 而应该使用之前的那个opener，因为之前的那个opener已经包含了
+    # 登陆所需要的cookie信息
+    req = request.Request(dapeng_url,headers=headers)
+    resp = opener.open(dapeng_url)
+    with open('renren.html','w',encoding='utf-8') as fp:
+        fp.write(resp.read().decode('utf-8'))
+
+if __name__ == '__main__':
+    opener = get_opener()
+    Login_renren(opener)
+    visit_profile(opener)
 
