@@ -23,4 +23,4 @@ html = etree.HTML(text)
 movies_href=html.xpath("//table[@class='tbspan']//a/@href")
 
 for movie_href in movies_href:
-    print(movie_href)
+    print(url+movie_href)
